@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.sql.*"%>
+<%@ page language="java" import="java.sql.*,java.io.*,java.servlet.*,java.util.*"%>
 
 <%
 
@@ -23,8 +23,10 @@ ResultSet rs = ps.executeQuery();
             }
         }
         if(x==1)
-        {
-    		response.sendRedirect("new.html");
+        { 
+    		session.setAttribute("user",email);
+            response.sendRedirect("services.jsp");
+
 		}
 		else
 		{

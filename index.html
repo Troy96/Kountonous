@@ -7,14 +7,47 @@
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="css/Footer-with-social-cons.css">
+	<link rel="stylesheet" href="css/Footer-with-social-icosss.css">
   <link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/w3css.css">
   
 
   <style>
+  #myFooter .facebook:hover{
+  color:#0077e2;
+}
+#myFooter .footer-copyright{
+  background-color: #383737;
+  padding-top:3px;
+  padding-bottom:3px;
+  text-align: center;
+}
+
+#myFooter .footer-copyright p{
+  margin:10px;
+  color: #ccc;
+}
+#myFooter .google:hover{
+  color:#0077e2;
+}
+#myFooter h5{
+  font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+#myFooter a:hover, #myFooter a:focus{
+  text-decoration: none;
+  color:white;
+}
+#myFooter .twitter:hover{
+  color: #00aced;
+}
   .glyphicon{
     font-size: 50px;
+  }
+  a{
+    color:#ded5d7a1;
   }
   .fa {
   padding: 20px;
@@ -35,6 +68,28 @@
 }
 .glyphicon{
     font-size: 100px;
+}
+#myFooter{
+  background-color: #535379;
+}
+#myFooter .social-networks{
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 38px;
+}
+
+#myFooter .social-networks a{
+    font-size: 32px;
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #f9f9f9;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+#myFooter .social-networks a:hover{
+  text-decoration: none;
+
 }
   
 
@@ -58,7 +113,7 @@
 <div class="topnav" class="w3-lobster">
   
   <a class="w3-lobster" href="index.html">Home</a>
-  <a class="w3-lobster" href="services.html">Services</a>
+  <a class="w3-lobster" href="services.jsp">Services</a>
   <a class="w3-lobster" href="login.html">Login</a>
   <a class="w3-lobster" href="register.html">Signup</a>
 </div>
@@ -122,7 +177,7 @@
   <div class="card-body">
     <h4 class="w3-lobster" class="card-title">Plumbing</h4>
     <p class="card-text">Some example text.</p>
-    <a href="services.html" class="btn btn-primary">Check here</a>
+    <a href="services.jsp" class="btn btn-primary">Check here</a>
   </div>
 </div>
 </div>
@@ -133,7 +188,7 @@
   <div class="card-body">
     <h4 class="w3-lobster" class="card-title">Home Cleaning</h4>
     <p class="card-text">Some example text.</p>
-    <a href="services.html" class="btn btn-primary">Check here</a>
+    <a href="services.jsp" class="btn btn-primary">Check here</a>
   </div>
 </div>
 </div>
@@ -144,7 +199,7 @@
   <div class="card-body">
     <h4 class="w3-lobster" class="card-title">Plumbing</h4>
     <p class="card-text">Some example text.</p>
-    <a href="services.html" class="btn btn-primary">Check here</a>
+    <a href="services.jsp" class="btn btn-primary">Check here</a>
   </div>
 </div>
 </div>
@@ -259,47 +314,48 @@
     <footer id="myFooter">
         <div class="container">
             <div class="row">
+                <div class="col-sm-3 myCols"><br>
+                    <a href="index.html"><img src="images/logo.png" alt="No Image" width="200" height="140"></a>
+                    
+                      <p style="color:white">We are a facility service provider, dealing
+                    in a wide range of services, all serviced by our
+                      backchecked servicemen. </p>                        
+                    
+                </div>
                 <div class="col-sm-3 myCols">
                     <h5>Get started</h5>
                     <ul>
+                        <li><a href="#\index.html">Home</a></li>
+                        <li><a href="register.html">Sign up</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-sm-3 myCols">
+                    <h5>Cleaning Services</h5>
+                    <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Sign up</a></li>
-                        <li><a href="#">Downloads</a></li>
+                        <li><a href="#">Kitchen</a></li>
+                        <li><a href="#">Bathroom</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3 myCols">
-                    <h5>About us</h5>
+                    <h5>Handyman Services</h5>
                     <ul>
-                        <li><a href="#">Company Information</a></li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Reviews</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-3 myCols">
-                    <h5>Support</h5>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Help desk</a></li>
-                        <li><a href="#">Forums</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-3 myCols">
-                    <h5>Legal</h5>
-                    <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Laptop Repair</a></li>
+                        <li><a href="#">AC Repair</a></li>
+                        <li><a href="#">Fride Repair</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="social-networks">
-            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="twitter"><i class="fa fa-twitter-square"></i></a>
             <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
             <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
         </div>
         <div class="footer-copyright">
-            <p>© 2016 Copyright Text </p>
+            <p> A 2018 Copyright. All rights reserved.</p>
         </div>
     </footer>
 
