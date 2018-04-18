@@ -17,6 +17,6 @@ ps.setString(3,mob);
 ps.setString(4,add);
 ps.setString(5,password);
 ps.executeUpdate();
-response.sendRedirect("login.html");
+response.sendRedirect("login.jsp");
 
 %>

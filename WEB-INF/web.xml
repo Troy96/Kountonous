@@ -1,0 +1,21 @@
+<web-app>
+<context-param> 
+   
+   <param-name>aadharcard-upload</param-name> 
+   <param-value>
+      C:\Program Files\Tomcat\webapps\Kountonous Project\images\serviceman_aadhar_card\
+   </param-value>
+   
+</context-param>
+<context-param>
+   <description>Location to store uploaded file</description> 
+   <param-name>profilepic-upload</param-name> 
+   <param-value>
+      C:\Program Files\Tomcat\webapps\Kountonous Project\images\serviceman_profile\
+   </param-value> 
+</context-param>
+
+<welcome-file-list>  
+   <welcome-file>home.jsp</welcome-file>  
+</welcome-file-list>  
+</web-app>

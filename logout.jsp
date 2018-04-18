@@ -3,6 +3,6 @@
 <%
 //Destroy the session variable. Logout to Home Page.
 session.invalidate();
-response.sendRedirect("index.html");
+response.sendRedirect("home.jsp");
 
 %>

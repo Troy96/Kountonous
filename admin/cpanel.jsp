@@ -6,15 +6,15 @@
     <title>Login</title>
     
     <link href="http://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" rel="stylesheet" type="text/css">
-   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/w3css.css">
+   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+   
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
     
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,9 +27,11 @@
         .well{
             width:70%;
         }
-        
+        #myFooter .facebook:hover{
+  color:#0077e2;
+}
 body{
-    background-image: url("images/back.jpg");
+    background-image: url("../images/back.jpg");
     background-size:100% 100%;
 }
 #myFooter .footer-copyright{
@@ -91,7 +93,7 @@ body{
 
         <div class="col-md-12">
 
-           <%@include file="common/navbar.jsp"%>
+          <%@include file="admin_common/navbar.jsp"%>
 
             <hr>
   
@@ -105,10 +107,10 @@ body{
   
     <div class="row">
          <div class="center-block">
-        <div class="col-lg-6">
-            <form method="post" action="login_back.jsp">
+        <div class="col-lg-6 col-lg-offset-3">
+            <form method="get" action="cpanel_back.jsp">
                 <div class="well">
-                    <h2>Login to your dashboard</h2>
+                    <h2>Hey Admin! Login to your dashboard</h2>
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
@@ -118,7 +120,7 @@ body{
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-                                    <input  type="password" name="password" placeholder="Password"  id="myId" required class="form-control" />
+                                    <input  type="password" name="password" placeholder="Password"  required class="form-control" />
                             
                             </div>
                             <br>
@@ -131,49 +133,7 @@ body{
             </form>
         </div>
      
-        <div class="col-lg-6">
-            <form method="post" action="register.jsp">
-                    <div class="well">
-                    <h2>Please register here</h2>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
-                            <input type="text" name="name" placeholder="Full Name" required class="form-control" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
-                            <input type="email" name="email" placeholder="Email address" required class="form-control" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
-                            <input type="text" name="address" placeholder="Residential Address" required class="form-control" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
-                            <input type="text" name="mobile" placeholder="Mobile No." required class="form-control" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-                            <input  type="password" name="password" placeholder="Password"  id="myId" required class="form-control" />
-                            
-                        </div>
-                        <br>
-                       
-                    </div>
-                    <button type="submit" name="go" class="btn btn-block btn-primary">Sign up</button>
-                    <a href="login.html" class="btn btn-block btn-default" role="button">Already have an account? Sign in here</a>
-                </div>
-
-                </form><!--form ends-->
-        </div><!--registration column ends-->
+        
      </div> 
      </div>
      <!--row ends-->
@@ -185,7 +145,7 @@ body{
      <div class="row">
         <div class="col-md-12">
            
-           <%@include file="common/footer.jsp"%>
+           <%@include file="admin_common/footer.jsp"%>
            
         </div>
     </div>
