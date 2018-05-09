@@ -1,3 +1,13 @@
+<%
+response.setHeader("Cache-Control","no-cache");
+  response.setHeader("Cache-Control","no-store");
+  response.setHeader("Pragma","no-cache");
+  response.setDateHeader ("Expires", 0);
+if(session.getAttribute("user1")==null){
+response.sendRedirect("cpanel.jsp");
+  }
+  %>
+
 <%@page language="java" import="java.sql.*, java.util.*"%>
 
 <!DOCTYPE html>
@@ -5,7 +15,9 @@
 <head>
 	<title>Serviceman Details</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
     <meta name="viewport" content="width=1,initial-scale=1,user-scalable=1" />
+    <meta http-equiv="Cache-Control" content="no-store"/>
 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/styles.css">
 
@@ -33,6 +45,7 @@
       		
       	}
 	</style>
+
 	
 
 
@@ -94,8 +107,8 @@
     <h5>Profile Picture</h5>
                             		
     <input type = "file" class="btn btn-danger" class="inp" name = "file" /><br/>
-    	<img src="../images/serviceman_profile/<%=aadharId%>.jpg" width=200 height=200><br/>
-    <input type = "submit" class="btn btn-danger" value = "Upload Profile Pic" class="btn" /><br/>
+    	<img src="../images/serviceman_profile/<%=aadharId%>.jpg" width=290 height=200><br/>
+    <input type = "submit" class="btn btn-danger" onClick="myFunction()" value = "Upload Profile Pic" class="btn" /><br/>
    </form>
 	</div>
 	<div class="col-lg-4" id="shift">
@@ -104,7 +117,7 @@
    <h5>Aadhar Card Front Picture</h5>
                             		
     <input type = "file" class="btn btn-info" class="inp" name = "file" /><br/>
-    	<img src="../images/serviceman_aadhar_card/<%=aadharId%>front.jpg" width=200 height=200><br/>
+    	<img src="../images/serviceman_aadhar_card/<%=aadharId%>front.jpg" width=290 height=200><br/>
     <input type = "submit" class="btn btn-info" class="btn"" value = "Upload Aadhar Front" /><br/>
 	</form>
 	</div>
@@ -113,7 +126,7 @@
     <h5>Aadhar Card Back Picture</h5>
     
     <input type = "file" class="btn btn-success" class="inp" name = "file" /><br/>
-    	<img src="../images/serviceman_aadhar_card/<%=aadharId%>back.jpg" width=200 height=200><br/>
+    	<img src="../images/serviceman_aadhar_card/<%=aadharId%>back.jpg" width=290 height=200><br/>
     <input type = "submit" class="btn btn-success" class="btn" value = "Upload Aadhar Back" /><br/>
 	</form>
 	</div>
@@ -139,6 +152,7 @@
    <div class="panel-footer">
    	<p><i>Signature of the Police Officer</i></p><br/><br/>
    	<input type="button" class="btn btn-primary" id="print" value="Print">
+   	
    </div>
    
 </div>
@@ -156,6 +170,8 @@
   crossorigin="anonymous"></script>
   <script>
   	$(document).ready(function(){
+  		
+
 
   		$("#print").click(function(){
 
@@ -165,16 +181,31 @@
   		
   		printDoc();
   		
+  		
+  		
 
+  		});
+  		$("#reload").click(function(){
+  			location.reload(true);
   		});
   		function printDoc(){
   			window.print();
   		}
+  		
+
 
   		
 
   	});
   </script>
+  <script>
+  	function myFunction() {
+    		location.reload(true);
+		}
+
+  </script>
+  
+  
 
 
 

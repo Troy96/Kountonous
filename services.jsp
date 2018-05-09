@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+    
 
   
   
@@ -181,6 +182,9 @@ section {
 .carousal{
 background-color: red;
 }
+#zoom:hover{
+  transform: scale(1.2);
+}
   
   
   </style>
@@ -193,11 +197,13 @@ background-color: red;
 
     <div class="row">
 
-      <div class="col-lg-12"> <!--Navigation Bar-->
-        <%@ include file="common/navbar.jsp"%>
-    
-      </div>
-      <br/>
+        <div class="col-md-12">
+
+            <%@ include file="common/navbar.jsp"%>
+           
+            <hr>
+  
+        </div>
     </div>
 
     <%!
@@ -246,13 +252,13 @@ background-color: red;
 
               <div class="row">
               <div class="col-lg-6">
-              <a href="services/cleaning/cleaning_base.jsp"><img class="img-rounded" src="images/clean_home.jpg" alt="No Image" width="200" height="200"></a>
+              <a href="services/cleaning_base.jsp"><img class="img-rounded" id="zoom" src="images/clean_home.jpg" alt="No Image" width="200" height="200"></a>
               
               <div class="text-services">
               
-              <h3><a href="services/cleaning/cleaning_base.jsp">Cleaning</a></h3>
-              <p><a href="services/cleaning/bathroom.jsp">Bathroom</a></p>
-              <p><a href="services/cleaning/carpet.jsp">Carpet</a></p>
+              <h3><a href="services/cleaning_base.jsp">Cleaning</a></h3>
+              <p><a href="getAllServiceManToUsers.jsp?categ=1">Home</a></p>
+              <p><a href="getAllServiceManToUsers.jsp?categ=2">Carpet</a></p>
               
               
               </div>
@@ -260,13 +266,13 @@ background-color: red;
 
 
               <div class="col-lg-6">
-              <a href="services/repairs/repairs_base.jsp"><img class="img-rounded" src="images/repair-laptop.jpg" alt="No Image" width="200" height="200"></a>
+              <a href="services/repairs_base.jsp"><img class="img-rounded" id="zoom" src="images/repair-laptop.jpg" alt="No Image" width="200" height="200"></a>
               
               <div class="text-services">
               
-              <h3><a href="services/repairs/repairs_base.jsp">Repairs</a></h3>
-              <p><a href="services/repairs/ac.jsp">AC</a></p>
-              <p><a href="services/repairs/laptop.jsp">Laptop</a></p>
+              <h3><a href="services/repairs_base.jsp">Repairs</a></h3>
+              <p><a href="getAllServiceManToUsers.jsp?categ=5">AC</a></p>
+              <p><a href="getAllServiceManToUsers.jsp?categ=6">Laptop</a></p>
               
         
               
@@ -274,68 +280,60 @@ background-color: red;
               </div>
 
               </div>
+              <br/><br/>
           
 
 
               <div class="row">
               <div class="col-lg-6">
-              <a href="services/carspa/carspa_base.jsp"><img class="img-rounded" src="images/car-spa.jpg" alt="No Image" width="200" height="200"></a>
+              <a href="services/carspa_base.jsp"><img class="img-rounded" id="zoom" src="images/car-spa.jpg" alt="No Image" width="200" height="200"></a>
               
               <div class="text-services">
               
-              <h3><a href="services/carspa/carspa_base.jsp">Car Spa</a></h3>
-              <p><a href="services/carspa/complete.jsp">Complete</a></p>
-              <p><a href="services/carspa/interior.jsp">Interior</a></p>
+              <h3><a href="services/carspa_base.jsp">Car Spa</a></h3>
+              <p><a href="getAllServiceManToUsers.jsp?categ=3">Complete</a></p>
+              <p><a href="getAllServiceManToUsers.jsp?categ=4">Interior</a></p>
               
               
               </div>
               </div>
 
               <div class="col-lg-6">
-              <a href="services/pestcontrol/pestcontrol_base.jsp"><img class="img-rounded" src="images/pest-control.jpg" alt="No Image" width="200" height="200"></a>
+              <a href="services/pestcontrol_base.jsp"><img class="img-rounded" id="zoom" src="images/pest-control.jpg" alt="No Image" width="200" height="200"></a>
               
               <div class="text-services">
               
-              <h3><a href="services/pestcontrol/pestcontrol_base.jsp">Pest Control</a></h3>
-              <p><a href="services/pestcontrol/general.jsp">General</a></p>
-              <p><a href="services/pestcontrol/bedbugs.jsp">Bed Bugs</a></p>
+              <h3><a href="services/pestcontrol_base.jsp">Pest Control</a></h3>
+              <p><a href="getAllServiceManToUsers.jsp?categ=7">General</a></p>
+              <p><a href="getAllServiceManToUsers.jsp?categ=8">Bed Bugs</a></p>
               
               
               </div>
               </div>
 
               </div>
+              <br/><br/>
 
                <div class="row">
-              <div class="col-lg-6">
-              <a href="services/paint/paint_base.jsp"><img class="img-rounded" src="images/painter.jpg" alt="No Image" width="200" height="200"></a>
               
-              <div class="text-services">
-              
-              <h3><a href="services/paint/paint_base.jsp">Paint</a></h3>
-              <p><a href="services/paint/freshpaint.jsp">Fresh-Paint</a></p>
-              <p><a href="services/paint/repaint.jsp">Repaint</a></p>
-             
-              
-              </div>
-              </div>
 
-              <div class="col-lg-6">
-              <a href="services/handyman/handyman_base.jsp"><img class="img-rounded" src="images/carpenter.jpg" alt="No Image" width="200" height="200"></a>
+              <div class="col-lg-12">
+              <a href="services/handyman_base.jsp"><img class="img-rounded" id="zoom" src="images/carpenter.jpg" alt="No Image" width="200" height="200"></a>
 
               
               <div class="text-services">
               
-              <h3><a href="services/handyman/handyman_base.jsp">Handyman</a></h3>
-              <p><a href="services/handyman/electrician.jsp">Electrician</a></p>
-              <p><a href="services/handyman/carpenter.jsp">Carpenter</a></p>
-              <p><a href="services/handyman/plumber.jsp">Plumber</a></p>
+              <h3><a href="services/handyman_base.jsp">Handyman</a></h3>
+              <p><a href="getAllServiceManToUsers.jsp?categ=9">Electrician</a></p>
+              <p><a href="getAllServiceManToUsers.jsp?categ=10">Carpenter</a></p>
+              <p><a href="getAllServiceManToUsers.jsp?categ=11">Plumber</a></p>
               
               
               </div>
 
             </div>
               </div>
+              <br/><br/>
 
               </div>
 

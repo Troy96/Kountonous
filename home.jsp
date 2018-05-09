@@ -144,7 +144,7 @@ body{
   <img class="card-img-top" src="images/Plumbing.jpg" alt="Card image" width="300" height="250">
   <div class="card-body">
     <h4 class="w3-lobster" class="card-title">Plumbing</h4>
-    <p class="card-text">Some example text.</p>
+   
     <a href="services.jsp" class="btn btn-primary">Check here</a>
   </div>
 </div>
@@ -156,7 +156,7 @@ body{
   <img class="card-img-top" src="images/clean_home.jpg" alt="Card image" width="300" height="250" >
   <div class="card-body">
     <h4 class="w3-lobster" class="card-title">Home Cleaning</h4>
-    <p class="card-text">Some example text.</p>
+   
     <a href="services.jsp" class="btn btn-primary">Check here</a>
   </div>
 </div>
@@ -167,7 +167,7 @@ body{
   <img class="card-img-top" src="images/Handyman_Home_Image.jpg" alt="Card image" width="300" height="250">
   <div class="card-body">
     <h4 class="w3-lobster" class="card-title">Plumbing</h4>
-    <p class="card-text">Some example text.</p>
+   
     <a href="services.jsp" class="btn btn-primary">Check here</a>
   </div>
 </div>

@@ -25,7 +25,7 @@ ps.setString(2,pass);
 ResultSet rs = ps.executeQuery();
         int x = 0;
         while (rs.next()) {
-            if (rs.getString(1).equals(email) && rs.getString(2).equals(pass)) {
+            if (rs.getString(2).equals(email) && rs.getString(3).equals(pass)) {
                 x = 1;
             } else {
                 x = 2;
@@ -33,7 +33,7 @@ ResultSet rs = ps.executeQuery();
         }
         if(x==1)
         { 
-    		session.setAttribute("user",email);
+    		session.setAttribute("user1",email);
             response.sendRedirect("cpanel_dash.jsp");
 		}
 		

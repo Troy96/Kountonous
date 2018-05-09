@@ -1,3 +1,13 @@
+<%
+response.setHeader("Cache-Control","no-cache");
+  response.setHeader("Cache-Control","no-store");
+  response.setHeader("Pragma","no-cache");
+  response.setDateHeader ("Expires", 0);
+if(session.getAttribute("user1")==null){
+response.sendRedirect("cpanel.jsp");
+  }
+  %>
+
 <%@page language="java" import="java.sql.*, java.util.*"%>
 
 <!DOCTYPE html>
@@ -21,7 +31,7 @@
     		text-align:center;
     	}
     	.content-center{
-        margin-left: auto;
+        margin: auto;
         width:90%;
         display:block;
       	}
@@ -53,12 +63,15 @@
 		<div class="row content-center">
 
 			<%
-			String aadharno,name,num,add;
-			aadharno=name=num=add=" ";
+			String aadharno,name,num,add,status,smain,scat;
+			aadharno=name=num=add=status=smain=scat=" ";
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kountonous_db","root","");
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM serviceman");
-			ResultSet rs = ps.executeQuery();
+			String query = "SELECT  aadharno,name,address,mobile,status,s_name,sc_name"; 
+      query += " FROM serviceman as s INNER JOIN services_categ s1 on s.serv_categ=s1.sc_id INNER JOIN services_main s2 on";
+      query += " s1.sm_id=s2.s_id ORDER BY s.name";
+      Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(query);
 			
 
 
@@ -74,16 +87,23 @@
         					<th>Fullname</th>
         					<th>Residential Address</th>
         					<th>Contact Number</th>
+                  <th>Service Main</th>
+                  <th>Service Category</th> 
+                  <th>Working Status</th>
+                  <th>Change Working Status (0/1)</th>
       					</tr>
     				</thead>
     				
     				<tbody>
     					<%
     						while(rs.next()){
-    							 aadharno = rs.getString(2);
-								 name = rs.getString(3);
-								 add = rs.getString(4);
-								 num = rs.getString(5);
+    							 aadharno = rs.getString(1);
+								   name = rs.getString(2);
+								   add = rs.getString(3);
+								   num = rs.getString(4);
+                   status=rs.getString(5);
+                   smain=rs.getString(6);
+                   scat=rs.getString(7);
 
     					%>
       					<tr>
@@ -91,6 +111,11 @@
         					<td><%=name%></td>
         					<td><%=add%></td>
         					<td><%=num%></td>
+                  <td><%=smain%></td>
+                  <td><%=scat%></td>
+                  <td><%=status%></td>
+                  <td><a href="changeStatus.jsp?tag1=<%=aadharno%>"><input type="button" name="statusChange" value="Change Status" class="btn btn-primary"></a></td>
+                  <td><a href="removeServiceman.jsp?tag2=<%=aadharno%>"><input type="button" name="serv_remove" value="Remove Serviceman" class="btn btn-danger"></a></td>
       					</tr>
 
       					<% } %>
@@ -107,6 +132,8 @@
 			<br/>
 		</div>
 	</div>
+
+
 
 
 

@@ -125,54 +125,54 @@ body{
                             
                         </div>
                         <button type="submit" name="go" class="btn btn-block btn-danger">Sign In</button>
-                            <a href="register.html" class="btn btn-block btn-default" role="button">Don't have an account? Register here</a>
-                            <a href="#" class="btn btn-block btn-default" role="button">Forgot Password?</a>
+                            
+                            
                 </div>
             </form>
         </div>
      
         <div class="col-lg-6">
-            <form method="post" action="register.jsp">
+           
                     <div class="well">
                     <h2>Please register here</h2>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
-                            <input type="text" name="name" placeholder="Full Name" required class="form-control" />
+                            <input type="text" id="name" placeholder="Full Name" required class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
-                            <input type="email" name="email" placeholder="Email address" required class="form-control" />
+                            <input type="email" id="email" placeholder="Email address" required class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
-                            <input type="text" name="address" placeholder="Residential Address" required class="form-control" />
+                            <input type="text" id="address" placeholder="Residential Address" required class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
-                            <input type="text" name="mobile" placeholder="Mobile No." required class="form-control" />
+                            <input type="text" id="mobile" placeholder="Mobile No." required class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-                            <input  type="password" name="password" placeholder="Password"  id="myId" required class="form-control" />
+                            <input  type="password" id="password" placeholder="Password"  id="myId" required class="form-control" />
                             
                         </div>
                         <br>
                        
                     </div>
-                    <button type="submit" name="go" class="btn btn-block btn-primary">Sign up</button>
-                    <a href="login.html" class="btn btn-block btn-default" role="button">Already have an account? Sign in here</a>
+                    <input type="button" value="Sign Up" id="signup" class="btn btn-block btn-primary">
+                    
                 </div>
 
-                </form><!--form ends-->
+             
         </div><!--registration column ends-->
      </div> 
      </div>
@@ -190,7 +190,48 @@ body{
         </div>
     </div>
 
-     </div><!--container ends-->         
+     </div><!--container ends--> 
+
+     <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+     <script>
+
+        $(document).ready(function(){
+
+            $("#signup").click(function(){
+
+               Name = $("#name").val();
+               Email = $("#email").val();
+               Address = $("#address").val();
+               Mobile = $("#mobile").val();
+               Password = $("#password").val();
+
+               $.post("register.jsp",
+                {
+                sname : Name,
+                semail : Email,
+                sadd : Address,
+                smob : Mobile,
+                spass : Password
+              },
+                function(data,status){
+
+                  alert(data);
+
+                });
+
+
+
+            });
+
+        });
+
+
+    
+    </script>         
     
 
 

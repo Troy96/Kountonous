@@ -82,7 +82,7 @@ body{
 
     </style>
 </head>
-<body style="padding-top:10px;"><!--Body starts-->
+<body style="padding-top:170px;"><!--Body starts-->
 
 
 <div class="container "><!--container starts-->
@@ -95,13 +95,13 @@ body{
 
           <%@include file="admin_common/navbar.jsp"%>
 
-            <hr>
+   
   
         </div>
     </div>
 
 <!--Navigation Bar ends-->
-<hr/>
+
 
 
   
@@ -127,8 +127,7 @@ body{
                             
                         </div>
                         <button type="submit" name="go" class="btn btn-block btn-danger">Sign In</button>
-                            <a href="register.html" class="btn btn-block btn-default" role="button">Don't have an account? Register here</a>
-                            <a href="#" class="btn btn-block btn-default" role="button">Forgot Password?</a>
+                            
                 </div>
             </form>
         </div>
@@ -139,7 +138,7 @@ body{
      <!--row ends-->
  </div>
 
-     <hr/>
+    <br/><br/>
      <div class="container-fluid">
 
      <div class="row">

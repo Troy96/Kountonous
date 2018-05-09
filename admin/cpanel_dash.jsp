@@ -1,3 +1,13 @@
+<%
+response.setHeader("Cache-Control","no-cache");
+  response.setHeader("Cache-Control","no-store");
+  response.setHeader("Pragma","no-cache");
+  response.setDateHeader ("Expires", 0);
+if(session.getAttribute("user1")==null){
+response.sendRedirect("cpanel.jsp");
+  }
+  %>
+
 <%@page language="java" import="java.sql.*, java.util.*"%>
 
 <!DOCTYPE html>
@@ -17,15 +27,18 @@
     	}
     	.content-center{
    			margin-left: auto;
-  	 		width:80%;
+  	 		width:63%;
    			display:block;
     	
+    	}
+    	a{
+    		color:#000;
     	}
     </style>
     
 
 </head>
-<body>
+<body style="padding-top: 100px;">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -44,43 +57,30 @@
 						<hr/>
 							<div class="container">
 								<div class="row content-center">
-									<div class="col-lg-6">
+									<div class="col-lg-12">
 										<a href="newServiceMan.jsp"><input type="button" value="Add  New Service Man" class="btn btn-primary"></a>
 									</div>
-									<div class="col-lg-6">
-										<a href="delServiceMan.jsp"><input type="button" value="Delete Service Man" class="btn btn-danger"></a>
-									</div>
+									
 								</div>
 								<hr/>
-								<div class="row content-center">
-									<div class="col-lg-6">
-										<a href="newUser.jsp"><input type="button" value="Add  New User" class="btn btn-success"></a>
-									</div>
-									<div class="col-lg-6">
-										<a href="delUser.jsp"><input type="button" value="Delete User" class="btn btn-warning"></a>
-									</div>
-								</div>
-								<hr/>
-								<div class="row content-center">
-									<div class="col-lg-6">
-										<a href="showAllUsers.jsp"><input type="button" value="Display All Users" class="btn btn-info"></a>
-									</div>
-									<div class="col-lg-6">
-										<a href="searchUser.jsp"><input type="button" value="Search Particular User" class="btn btn-primary"></a>
-									</div>
-								</div>
-								<hr/>
+
+
 								<div class="row content-center">
 									<div class="col-lg-6">
 										<a href="showAllServiceMan.jsp"><input type="button" value="Display All Service Men" class="btn btn-danger"></a>
 									</div>
-									<div class="col-lg-6">
-										<a href="searchServiceMan.jsp"><input type="button" value="Search Service Man" class="btn btn-default"></a>
-									</div>
 								</div>
 								<hr/>
-						
-							</div>
+
+
+								<div class="row content-center">
+									<div class="col-lg-12">
+										<a href="showAllUsers.jsp"><input type="button" value="Display All Users" class="btn btn-info"></a>
+									</div>
+									
+								</div>
+								<hr/>
+								
 
 
 
@@ -90,15 +90,17 @@
 			</div>
 		</div>
 
-
+		</div>
+		<div class="container-fluid">
 
 		<div class="row">
 			<div class="col-lg-12">
 				<%@include file="admin_common/footer.jsp"%>
 			</div>
 		</div>
-
 	</div>
+
+	
 
 
 

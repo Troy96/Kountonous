@@ -2,11 +2,11 @@
 
 <%
 
-String name 	= request.getParameter("name");
-String email	= request.getParameter("email");
-String add		=request.getParameter("address");
-String mob 		= request.getParameter("mobile");;
-String password = request.getParameter("password");
+String name 	= request.getParameter("sname");
+String email	= request.getParameter("semail");
+String add		=request.getParameter("sadd");
+String mob 		= request.getParameter("smob");;
+String password = request.getParameter("spass");
 
 Class.forName("com.mysql.jdbc.Driver");
 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kountonous_db","root","");
@@ -17,6 +17,7 @@ ps.setString(3,mob);
 ps.setString(4,add);
 ps.setString(5,password);
 ps.executeUpdate();
-response.sendRedirect("login.jsp");
+
+out.println("You have successfully registered!! Now you may login");
 
 %>

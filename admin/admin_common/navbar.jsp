@@ -1,9 +1,15 @@
 <%@ page language="java" import="java.sql.*,java.io.*,java.servlet.*,java.util.*"%>
 <%
-String sessAdmin = (String)session.getAttribute("user");
+String sessAdmin = (String)session.getAttribute("user1");
 %>
 
+<style>
+  body{
+    background-image: url("../images/back.jpg");
+    background-size: 100% 100%;
 
+  }
+</style>
 <%
 if(sessAdmin==null){
   %>

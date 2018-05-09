@@ -1,3 +1,13 @@
+<%
+response.setHeader("Cache-Control","no-cache");
+  response.setHeader("Cache-Control","no-store");
+  response.setHeader("Pragma","no-cache");
+  response.setDateHeader ("Expires", 0);
+if(session.getAttribute("user1")==null){
+response.sendRedirect("cpanel.jsp");
+  }
+  %>
+
 <%@page language="java" import="java.sql.*, java.util.*"%>
 
 <!DOCTYPE html>
@@ -17,7 +27,7 @@
     	}
     	.content-center{
    			margin-left: auto;
-  	 		width:80%;
+  	 		width:70%;
    			display:block;
     	
     	}
@@ -25,7 +35,7 @@
     
 
 </head>
-<body>
+<body style="padding-top: 50px;">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -33,16 +43,16 @@
 			</div>
 			<br/>
 		</div>
+    <hr/>
 
 
 
-		<div class="row">
+		<div class="row content-center">
 			<div class="col-lg-6">
-				<div class="jumbotron">
-					<div class="well">
-						<h4 class="text-center">Add new Serviceman</h4>
-						<hr/>
-
+			
+				
+					
+					
 
 			
                     <div class="well">
@@ -76,25 +86,37 @@
                         </div>
 
                     </div>
+                    <div class="form-group">
+           <h4 class="leftstyle">Service Category of Serviceman:</h4>
+              <select class="form-control" id="categ">
+                <option value="1">1 (Home)</option>
+                <option value="2">2 (Carpet)</option>
+                <option value="3">3 (Complete)</option>
+                <option value="4">4 (Interior)</option>
+                <option value="5">5 (AC)</option>
+                <option value="6">6 (Laptop)</option>
+                <option value="7">7 (General)</option>
+                <option value="8">8 (Bed Bugs)</option>
+                <option value="9">9 (Electrician)</option>
+                <option value="10">10 Plumber)</option>
+                <option value="11">11 (Carpenter)</option>
+
+                              </select>
+              </div>
+                   <div class="form-group">
+           <h4 class="leftstyle">Service Status:</h4>
+              <select class="form-control" id="status">
+                <option value="0">0 (Available)</option>
+                <option value="1">1 (Unavailable)</option>
+                
+              </select>
+          </div>
                    <input type="button" value="Submit" id="go" class="btn btn-primary btn-block">
                 </div>
-              </div>
-					</div>
+       
+					
 				</div>
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="jumbotron">
-						<div class="well">
-
-								
-         							
-                        		
-                    		</div>
-                    	</div>
-
-						</div>
-
-					</div>
+				
 				</div>
 
 
@@ -104,14 +126,17 @@
 		
 
 
-
+</div>
+<hr/>
+  <div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
 				<%@include file="admin_common/footer.jsp"%>
 			</div>
 		</div>
+  </div>
 
-	</div>
+	
 
 	<script
   src="https://code.jquery.com/jquery-3.3.1.js"
@@ -124,7 +149,10 @@
 		Name = $("#name").val();
 		Address = $("#add").val();
 		Mobile = $("#mobile").val();
-
+    Categ = $("#categ").val();
+    Status = $("#status").val();
+   
+   
   
 
 
@@ -133,7 +161,9 @@
 		  saadhar : Aadhar,
       sname : Name,
       saddress : Address,
-      smobile : Mobile
+      smobile : Mobile,
+      scateg : Categ,
+      sstatus : Status
 		},
 		function(data,status){
 

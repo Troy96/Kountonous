@@ -47,11 +47,7 @@
         
        
    
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kountonous_db","root","");
-         PreparedStatement ps = con.prepareStatement("INSERT INTO images (aadharFrontName) values(?)");
-         ps.setString(1,u);
-         ps.executeUpdate();
+       
         
          while ( i.hasNext () ) {
             FileItem fi = (FileItem)i.next();

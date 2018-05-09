@@ -49,11 +49,7 @@
        
        
    
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kountonous_db","root","");
-         PreparedStatement ps = con.prepareStatement("INSERT INTO images (imageName) values(?)");
-         ps.setString(1,u);
-         ps.executeUpdate();
+       
         
          while ( i.hasNext () ) {
             FileItem fi = (FileItem)i.next();
@@ -72,8 +68,9 @@
                   file = new File( filePath + 
                   fileName.substring(fileName.lastIndexOf("\\")+1)) ;
                }
-               fi.write( file ) ;
+               fi.write(file) ;
                response.sendRedirect("dispServiceMan.jsp?user="+u);
+              
 
               
 
