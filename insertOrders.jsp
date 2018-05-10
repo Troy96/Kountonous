@@ -17,7 +17,6 @@ String bcost = request.getParameter("bcost");
 String btype = request.getParameter("btype");
 String bservmain = request.getParameter("bservmain");
 String bservcateg = request.getParameter("bservcateg");
-
 Class.forName("com.mysql.jdbc.Driver");
 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kountonous_db","root","");
 PreparedStatement ps = con.prepareStatement("INSERT INTO orders (uname,uemail,uadd,ucontact,sname,saadhar,sphone,bdate,btime,bcost,btype,bservmain,bservcateg) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)");
@@ -37,6 +36,10 @@ ps.setString(12,bservmain);
 ps.setString(13,bservcateg);
 
 ps.executeUpdate();
+//Making the serviceman busy---
+PreparedStatement ps2 = con.prepareStatement("UPDATE serviceman SET `status`=1 WHERE `aadharno`=?");
+ps2.setString(1,saadhar);
+ps2.executeUpdate();
 response.sendRedirect("services/confirmedBooking.html");
 
 %>

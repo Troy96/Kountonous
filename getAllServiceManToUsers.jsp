@@ -1,3 +1,12 @@
+<%
+response.setHeader("Cache-Control","no-cache");
+  response.setHeader("Cache-Control","no-store");
+  response.setHeader("Pragma","no-cache");
+  response.setDateHeader ("Expires", 0);
+if(session.getAttribute("user")==null){
+response.sendRedirect("login.jsp");
+  }
+  %>
 <%@page language="java" import="java.sql.*, java.util.*"%>
 <%
 
@@ -50,7 +59,7 @@ if(suser==null){
          <%@ include file="common/navbar.jsp"%>
            
             <hr>
-  
+  s
       </div>
     </div>
 		

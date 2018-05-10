@@ -1,3 +1,12 @@
+<%
+response.setHeader("Cache-Control","no-cache");
+  response.setHeader("Cache-Control","no-store");
+  response.setHeader("Pragma","no-cache");
+  response.setDateHeader ("Expires", 0);
+if(session.getAttribute("user")==null){
+response.sendRedirect("../login.jsp");
+  }
+  %>
 <%@page language="java" import="java.sql.*, java.io.*, java.util.*"%>
 
 
@@ -56,9 +65,13 @@ while(rs2.next()){
 
     <meta name="viewport" content="width=1,initial-scale=1,user-scalable=1" />
     <meta http-equiv="Cache-Control" content="no-store"/>
-	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
+	
+   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
+    
+  
+<link rel="stylesheet" href="../css/styles.css">  
     
 
     <style>
